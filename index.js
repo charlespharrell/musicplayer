@@ -5,7 +5,7 @@ const music = document.querySelector('#audio');
 const seekBar = document.querySelector('.seek-bar')
 const songName = document.querySelector('.music-name')
 const artistName = document.querySelector('.artist-name');
-const disk = document.querySelector('.disk')
+const musicImage = document.querySelector('.music-image')
 const currentTime = document.querySelector('.current-time')
 const musicDuration = document.querySelector('.song-duration')
 const playBtn = document.querySelector('.play-btn');
@@ -19,7 +19,7 @@ playBtn.addEventListener('click', () => {
         music.pause()
     }
     playBtn.classList.toggle('pause')
-    disk.classList.toggle('play')
+    musicImage.classList.toggle('play')
 
 })  
 
@@ -31,7 +31,7 @@ const playMusic = (i) => {
 
     songName.innerHTML = song.name;
     artistName.innerHTML = song.artist
-    disk.style.backgroundImage = `url('${song.cover}')`
+    musicImage.style.backgroundImage = `url('${song.cover}')`
 
     currentTime.innerHTML = '00:00'
     setTimeout(()=>{
@@ -70,7 +70,7 @@ const playMusic = (i) => {
 const musicPlay = () =>{
     music.play();
     playBtn.classList.remove('pause')
-    disk.classList.add('play')
+    musicImage.classList.add('play')
 }
 
 forwardBtn.addEventListener('click', () =>{

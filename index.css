@@ -10,23 +10,18 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient( 180deg, #1e1e1e 0%, #121212 40%, #0b0b0b 100% );
+     background: linear-gradient(180deg, #1e1e1e 0%, #121212 40%, #0b0b0b 100%);
 }
 
-.music-player{
+.music-player-container{
     width: 350px;
     height: 530px;
     border-radius: 2rem;
-   background: rgba(24,24,24,0.88);
+    background: rgba(24,24,24,0.88);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.04);
     background: linear-gradient(
-    135deg,
-    #1DB95420,
-    #191414 35%,
-    #121212 70%,
-    #000000 100%
-    );
+    135deg, #1DB95420, #191414 35%, #121212 70%,#000000 100%);
      box-shadow:
      inset 0 2px 5px rgba(255,255,255,0.04),
      inset 0 -20px 40px rgba(0,0,0,0.7),
@@ -37,7 +32,6 @@ body{
 }
 
 .music-name, .artist-name{
-    /* text-align: left; */
     text-transform: capitalize;
     color: #ffffff;
 }
@@ -53,65 +47,45 @@ body{
     font-size: 10px;
 }
 
-.disk{
-    /* display: block; */
+.music-image{
     margin: 10px auto;
     width: 18rem;
     height: 18rem;
-    background-image: url('images/khalidm.jpg') center/cover no-repeat;
-    /* background-size: cover; */
+    background-image: url('images/khalidm.jpg');
+    background-size: cover;
 }
-    /* object-fit: cover; */
-    /* position: relative; */
-    /* line-height: 0; */
-    /* background-position: center;
-    background-repeat: no-repeat; */
-    /* box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.08); */
-    /* animation: rotate 20s linear infinite; */
-    /* animation-play-state: paused;  */
-    /* border-radius: 50%; */
 
-
-/* .disk.play{
-    animation-play-state: running;
-} */
-/* .disk::before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background: #5f7a61;
-} */
 .song-slider{
     width: 100%;
     position: relative;
 }
+
 .seek-bar{
     -webkit-appearance: none;
     width: 100%;
     height: 5px;
     border-radius: 10px;
-    background: #7fc8a9;
+    background:#ffffff;
     overflow: hidden;
     cursor: pointer;
 }
+
 .seek-bar::-webkit-slider-thumb{
     -webkit-appearance: none;
     width: 1px;
     height: 20px;
-    box-shadow: -400px 0 0 400px #d5eebb; 
+    box-shadow: -400px 0 0 400px #768c5e; 
 }
+
 .current-time, .song-duration{
     font-size: 14px;
 }
+
 .song-duration{
     position: absolute;
     right: 0;
 }
+
 .controls{
     width: 60%;
     display: flex;
@@ -120,6 +94,7 @@ body{
     margin: auto;
     margin-top: 0px;
 }
+
 .play-btn{
     position: relative;
     width: 60px;
@@ -129,6 +104,7 @@ body{
     cursor: pointer;
     border: none;
 }
+
 .play-btn span{
     position: absolute;
     top: 50%;
@@ -141,13 +117,16 @@ body{
     transition: .5s;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
 .play-btn span:nth-child(2){
     left: 55%;
     transform-origin: center;
 }
+
 .play-btn.pause span:nth-child(2){
     transform: translateY(-50%) scaleY(0);
 }
+
 .play-btn.pause span:nth-child(1){
     width: 35%;
     left: 53%;
@@ -171,6 +150,7 @@ body{
         box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
     }
 }
+
 .btn{
     width: 40px;
     height: 40px;
@@ -183,11 +163,14 @@ body{
     cursor: pointer;
 }
 
-@keyframes rotate{
-    0%{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(360deg);
+  @media (max-width: 480px) {
+    body{
+    width: 100%;
+     align-items: flex-start;
+}
+    .music-player-container{
+      margin-top: 5rem;
+      width: 350px;
+      height:580px;
     }
 }
